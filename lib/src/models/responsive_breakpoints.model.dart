@@ -1,22 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_responsive_layout/src/enums/breakpoints.enum.dart';
-import 'package:provider/provider.dart';
 
 class ResponsiveBreakpoints {
+  /// Minimum width in pixel for the [Breakpoints.md] breakpoint.
+  /// Must be more than 0 [Breakpoints.sm] less than [lg].
   final double md;
+
+  /// Minimum width in pixel for the [Breakpoints.lg] breakpoint.
+  /// Must be more than [md] and less than [xl].
   final double lg;
+
+  /// Minimum width in pixel for the [Breakpoints.xl] breakpoint.
+  /// Must be more than [lg] and less than [xxl].
   final double xl;
+
+  /// Minimum width in pixel for the [Breakpoints.xxl] breakpoint.
+  /// Must be more than [xl].
   final double xxl;
 
   const ResponsiveBreakpoints({
-    this.md = 767,
-    this.lg = 1023,
-    this.xl = 1279,
-    this.xxl = 1535,
+    this.md = 460,
+    this.lg = 768,
+    this.xl = 1024,
+    this.xxl = 1280,
   }) : assert(0 < md && md < lg && lg < xl && xl < xxl);
 
-  factory ResponsiveBreakpoints.of(BuildContext context, {bool listen = true}) => Provider.of(context, listen: listen);
-
+  /// Returns the current [Breakpoints].
   Breakpoints getCurrentBreakpoint(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 

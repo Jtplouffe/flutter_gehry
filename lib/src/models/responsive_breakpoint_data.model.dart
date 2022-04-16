@@ -1,25 +1,27 @@
 import 'package:flutter_responsive_layout/src/enums/breakpoints.enum.dart';
 
+/// Used to store some data for different breakpoints.
 class ResponsiveBreakpointData<D> {
-  final D sm;
-  final D md;
-  final D lg;
-  final D xl;
-  final D xxl;
+  /// All of data, from sm to xxl.
+  final List<D?> data;
 
-  const ResponsiveBreakpointData({
-    required this.sm,
-    required this.md,
-    required this.lg,
-    required this.xl,
-    required this.xxl,
-  });
+  ResponsiveBreakpointData({
+    required D? sm,
+    required D? md,
+    required D? lg,
+    required D? xl,
+    required D? xxl,
+  }) : data = [sm, md, lg, xl, xxl];
 
+  /// Returns the data fro for the breakpoint.
+  /// This is a mobile-first approach, where if there is no data for the breakpoint,
+  /// 1the data of the next non-null smaller breakpoint will be used.
   D? getForBreakpoint(Breakpoints breakpoint) {
-    if (breakpoint == Breakpoints.sm && sm != null) return sm;
-    if (breakpoint <= Breakpoints.md && md != null) return md;
-    if (breakpoint <= Breakpoints.lg && lg != null) return lg;
-    if (breakpoint <= Breakpoints.xl && xl != null) return xl;
-    return xxl;
+    // Start from the breakpoint and go down until a data is not null.
+    for (int i = breakpoint.index; i >= 0; i--) {
+      if (data[i] != null) return data[i];
+    }
+
+    return null;
   }
 }
