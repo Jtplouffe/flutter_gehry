@@ -11,13 +11,13 @@ class ResponsiveFlex extends BaseResponsiveWidget {
 
   ResponsiveFlex({
     Key? key,
+    ResponsiveFlexData? xs,
     ResponsiveFlexData? sm,
     ResponsiveFlexData? md,
     ResponsiveFlexData? lg,
     ResponsiveFlexData? xl,
-    ResponsiveFlexData? xxl,
     required this.children,
-  })  : data = ResponsiveBreakpointData(sm: sm, md: md, lg: lg, xl: xl, xxl: xxl),
+  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

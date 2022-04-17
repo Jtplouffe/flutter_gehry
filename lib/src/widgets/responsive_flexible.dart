@@ -8,13 +8,13 @@ class ResponsiveFlexible extends BaseResponsiveWidget {
 
   ResponsiveFlexible({
     Key? key,
+    ResponsiveFlexibleData? xs,
     ResponsiveFlexibleData? sm,
     ResponsiveFlexibleData? md,
     ResponsiveFlexibleData? lg,
     ResponsiveFlexibleData? xl,
-    ResponsiveFlexibleData? xxl,
     required this.child,
-  })  : data = ResponsiveBreakpointData(sm: sm, md: md, lg: lg, xl: xl, xxl: xxl),
+  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

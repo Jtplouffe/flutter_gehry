@@ -8,13 +8,13 @@ class ResponsivePadding extends BaseResponsiveWidget {
 
   ResponsivePadding({
     Key? key,
+    EdgeInsets? xs,
     EdgeInsets? sm,
     EdgeInsets? md,
     EdgeInsets? lg,
     EdgeInsets? xl,
-    EdgeInsets? xxl,
     required this.child,
-  })  : data = ResponsiveBreakpointData(sm: sm, md: md, lg: lg, xl: xl, xxl: xxl),
+  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(
           key: key,
         );

@@ -28,15 +28,15 @@ class MyApp extends StatelessWidget {
 This will provide the different breakpoints to the app. The breakpoints works be minimum window
 width.
 
-There are 5 breakpoints: `sm`, `md`, `lg`, `xl`, and `xxl`.
+There are 5 breakpoints: `xs`, `sm`, `md`, `lg`, and `xl`.
 
 The defaults values for those breakpoints are:
 
-- sm: `0`
-- md: `460`
-- lg: `768`
-- xl: `1024`
-- xxl: `1280`
+- xs: `0` (cannot be configured)
+- sm: `460`
+- md: `768`
+- lg: `1024`
+- xl: `1280`
 
 These can be changed by passing an instance of `ResponsiveBreakpoints` to the `breakpoints` property
 of `ResponsiveBreakpointsProvider`.

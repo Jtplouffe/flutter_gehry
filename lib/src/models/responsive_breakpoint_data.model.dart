@@ -6,12 +6,12 @@ class ResponsiveBreakpointData<D> {
   final List<D?> data;
 
   ResponsiveBreakpointData({
+    required D? xs,
     required D? sm,
     required D? md,
     required D? lg,
     required D? xl,
-    required D? xxl,
-  }) : data = [sm, md, lg, xl, xxl];
+  }) : data = [xs, sm, md, lg, xl];
 
   /// Returns the data fro for the breakpoint.
   /// This is a mobile-first approach, where if there is no data for the breakpoint,

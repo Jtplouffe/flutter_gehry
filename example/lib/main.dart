@@ -32,22 +32,22 @@ class ResponsivePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsivePadding(
-      sm: const EdgeInsets.all(8),
-      lg: const EdgeInsets.all(12),
+      xs: const EdgeInsets.all(8),
+      md: const EdgeInsets.all(12),
       child: ResponsiveFlex(
-        sm: const ResponsiveFlexData.vertical(),
-        lg: const ResponsiveFlexData.horizontal(
+        xs: const ResponsiveFlexData.vertical(),
+        md: const ResponsiveFlexData.horizontal(
           crossAxisAlignment: CrossAxisAlignment.stretch,
         ),
         children: [
           ResponsiveFlexible(
-            lg: const ResponsiveExpandedData(),
+            md: const ResponsiveExpandedData(),
             child: ResponsiveFlex(
-              sm: const ResponsiveFlexData(
+              xs: const ResponsiveFlexData(
                 direction: Axis.vertical,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
               ),
-              lg: const ResponsiveFlexData(
+              md: const ResponsiveFlexData(
                 direction: Axis.vertical,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
               ),
@@ -66,13 +66,13 @@ class ResponsivePage extends StatelessWidget {
                   ),
                 ),
                 ResponsiveSizedBox(
-                  sm: const ResponsiveSizedBoxData(height: 16),
-                  lg: const ResponsiveSizedBoxData(height: 20),
+                  xs: const ResponsiveSizedBoxData(height: 16),
+                  md: const ResponsiveSizedBoxData(height: 20),
                 ),
                 for (int i = 0; i < 4; i++)
                   ResponsivePadding(
-                    sm: const EdgeInsets.symmetric(vertical: 4),
-                    lg: const EdgeInsets.symmetric(vertical: 8),
+                    xs: const EdgeInsets.symmetric(vertical: 4),
+                    md: const EdgeInsets.symmetric(vertical: 8),
                     child: ColoredBox(
                       color: Colors.deepPurpleAccent.withOpacity(0.5),
                       child: const Padding(
@@ -90,17 +90,17 @@ class ResponsivePage extends StatelessWidget {
             ),
           ),
           ResponsiveSizedBox(
-            sm: const ResponsiveSizedBoxData(height: 16),
-            lg: const ResponsiveSizedBoxData(width: 12),
+            xs: const ResponsiveSizedBoxData(height: 16),
+            md: const ResponsiveSizedBoxData(width: 12),
           ),
           ColoredBox(
             color: Colors.deepPurple.withOpacity(0.75),
             child: ResponsivePadding(
-              sm: const EdgeInsets.all(12),
-              lg: const EdgeInsets.all(20),
+              xs: const EdgeInsets.all(12),
+              md: const EdgeInsets.all(20),
               child: ResponsiveFlex(
-                sm: const ResponsiveFlexData.vertical(crossAxisAlignment: CrossAxisAlignment.stretch),
-                lg: const ResponsiveFlexData.vertical(),
+                xs: const ResponsiveFlexData.vertical(crossAxisAlignment: CrossAxisAlignment.stretch),
+                md: const ResponsiveFlexData.vertical(),
                 children: const [
                   Text(
                     "Sidebar title",

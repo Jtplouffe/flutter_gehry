@@ -6,12 +6,12 @@ class ResponsiveBuilder extends BaseResponsiveWidget {
 
   ResponsiveBuilder({
     Key? key,
+    WidgetBuilder? xs,
     WidgetBuilder? sm,
     WidgetBuilder? md,
     WidgetBuilder? lg,
     WidgetBuilder? xl,
-    WidgetBuilder? xxl,
-  })  : data = ResponsiveBreakpointData(sm: sm, md: md, lg: lg, xl: xl, xxl: xxl),
+  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

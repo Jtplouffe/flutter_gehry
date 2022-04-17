@@ -8,12 +8,12 @@ class ResponsiveWidget extends BaseResponsiveWidget {
 
   ResponsiveWidget({
     Key? key,
+    Widget? xs,
     Widget? sm,
     Widget? md,
     Widget? lg,
     Widget? xl,
-    Widget? xxl,
-  })  : data = ResponsiveBreakpointData(sm: sm, md: md, lg: lg, xl: xl, xxl: xxl),
+  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(
           key: key,
         );

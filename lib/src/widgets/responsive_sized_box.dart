@@ -10,13 +10,13 @@ class ResponsiveSizedBox extends BaseResponsiveWidget {
 
   ResponsiveSizedBox({
     Key? key,
+    ResponsiveSizedBoxData? xs,
     ResponsiveSizedBoxData? sm,
     ResponsiveSizedBoxData? md,
     ResponsiveSizedBoxData? lg,
     ResponsiveSizedBoxData? xl,
-    ResponsiveSizedBoxData? xxl,
     this.child,
-  })  : data = ResponsiveBreakpointData(sm: sm, md: md, lg: lg, xl: xl, xxl: xxl),
+  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override
