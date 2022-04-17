@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_responsive_layout/flutter_responsive_layout.dart';
 
 /// This widget providers the [ResponsiveBreakpoints] to its [child].

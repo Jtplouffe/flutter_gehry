@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_responsive_layout/src/enums/breakpoints.enum.dart';
 
 class ResponsiveBreakpoints {

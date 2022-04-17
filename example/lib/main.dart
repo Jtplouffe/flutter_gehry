@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         title: "Responsive app",
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          canvasColor: Colors.purpleAccent.withOpacity(0.15),
+          canvasColor: Colors.white.withOpacity(0.9),
         ),
         debugShowCheckedModeBanner: false,
         home: const Scaffold(
@@ -74,7 +74,7 @@ class ResponsivePage extends StatelessWidget {
                     sm: const EdgeInsets.symmetric(vertical: 4),
                     lg: const EdgeInsets.symmetric(vertical: 8),
                     child: ColoredBox(
-                      color: Colors.deepPurpleAccent.withOpacity(0.2),
+                      color: Colors.deepPurpleAccent.withOpacity(0.5),
                       child: const Padding(
                         padding: EdgeInsets.all(16),
                         child: Text(
@@ -94,7 +94,7 @@ class ResponsivePage extends StatelessWidget {
             lg: const ResponsiveSizedBoxData(width: 12),
           ),
           ColoredBox(
-            color: Colors.deepPurple.withOpacity(0.3),
+            color: Colors.deepPurple.withOpacity(0.75),
             child: ResponsivePadding(
               sm: const EdgeInsets.all(12),
               lg: const EdgeInsets.all(20),

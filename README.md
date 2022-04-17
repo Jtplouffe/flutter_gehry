@@ -118,3 +118,8 @@ This is a simple widget that takes a `Widget` for each breakpoint and returns th
 current breakpoint.
 
 If there is no data for the current breakpoint, a `SizedBox.shrink()` will be returned.
+
+#### ResponsiveBuilder
+
+Same as `ResponsiveWidget`, but with `WidgetBuilder`, which is
+a `Widget Function(BuildContext context)` instead of a `Widget`.
