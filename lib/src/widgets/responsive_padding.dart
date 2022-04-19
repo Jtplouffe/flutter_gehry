@@ -3,7 +3,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Padding].
 class ResponsivePadding extends BaseResponsiveWidget {
-  final ResponsiveBreakpointData<EdgeInsets> data;
+  final ResponsiveBreakpointsData<EdgeInsets> data;
   final Widget child;
 
   ResponsivePadding({
@@ -14,7 +14,7 @@ class ResponsivePadding extends BaseResponsiveWidget {
     EdgeInsets? lg,
     EdgeInsets? xl,
     required this.child,
-  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(
           key: key,
         );

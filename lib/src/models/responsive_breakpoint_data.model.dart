@@ -1,11 +1,11 @@
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Used to store some data for different breakpoints.
-class ResponsiveBreakpointData<D> {
+class ResponsiveBreakpointsData<D> {
   /// All of data, from xs to xl.
   final List<D?> data;
 
-  ResponsiveBreakpointData({
+  ResponsiveBreakpointsData({
     required D? xs,
     required D? sm,
     required D? md,

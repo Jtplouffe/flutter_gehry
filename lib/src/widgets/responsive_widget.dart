@@ -4,7 +4,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 /// Displays the widget for the current breakpoint,
 /// or an empty [SizedBox] if no data has been provided for the breakpoint.
 class ResponsiveWidget extends BaseResponsiveWidget {
-  final ResponsiveBreakpointData<Widget> data;
+  final ResponsiveBreakpointsData<Widget> data;
 
   ResponsiveWidget({
     Key? key,
@@ -13,7 +13,7 @@ class ResponsiveWidget extends BaseResponsiveWidget {
     Widget? md,
     Widget? lg,
     Widget? xl,
-  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(
           key: key,
         );

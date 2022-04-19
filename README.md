@@ -1,4 +1,4 @@
-# nice_flutter_kit
+# flutter_gehry
 
 A Flutter package that provides a way to do a responsive layout. This package uses a mobile-first
 breakpoint approach.
@@ -123,3 +123,10 @@ If there is no data for the current breakpoint, a `SizedBox.shrink()` will be re
 
 Same as `ResponsiveWidget`, but with `WidgetBuilder`, which is
 a `Widget Function(BuildContext context)` instead of a `Widget`.
+
+#### ResponsiveDecoratedBox
+
+THis widget is a wrapper around the `DecoratedBox` widget.
+
+If there is no data for the current breakpoint, the child will be directly returned.
+If the child is null, a `SizedBox.shrink()` will be used.

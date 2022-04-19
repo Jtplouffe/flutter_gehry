@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Flex].
-/// For a [Row], use [ResponsiveBreakpointData.horizontal], and for a [Column], use [ResponsiveBreakpointData.vertical]
+/// For a [Row], use [ResponsiveBreakpointsData.horizontal], and for a [Column], use [ResponsiveBreakpointsData.vertical]
 class ResponsiveFlex extends BaseResponsiveWidget {
-  final ResponsiveBreakpointData<ResponsiveFlexData> data;
+  final ResponsiveBreakpointsData<ResponsiveFlexData> data;
 
   /// List of widget that will be passed to [Row.children] or [Column.children], depending on the current breakpoint
   final List<Widget> children;
@@ -17,24 +17,24 @@ class ResponsiveFlex extends BaseResponsiveWidget {
     ResponsiveFlexData? lg,
     ResponsiveFlexData? xl,
     required this.children,
-  })  : data = ResponsiveBreakpointData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
-    final data = this.data.getForBreakpoint(breakpoint);
+    final flexData = data.getForBreakpoint(breakpoint);
 
-    if (data == null) return const SizedBox.shrink();
+    if (flexData == null) return const SizedBox.shrink();
 
     return Flex(
-      direction: data.direction,
-      mainAxisAlignment: data.mainAxisAlignment,
-      mainAxisSize: data.mainAxisSize,
-      crossAxisAlignment: data.crossAxisAlignment,
-      textDirection: data.textDirection,
-      verticalDirection: data.verticalDirection,
-      textBaseline: data.textBaseline,
-      clipBehavior: data.clipBehavior,
+      direction: flexData.direction,
+      mainAxisAlignment: flexData.mainAxisAlignment,
+      mainAxisSize: flexData.mainAxisSize,
+      crossAxisAlignment: flexData.crossAxisAlignment,
+      textDirection: flexData.textDirection,
+      verticalDirection: flexData.verticalDirection,
+      textBaseline: flexData.textBaseline,
+      clipBehavior: flexData.clipBehavior,
       children: children,
     );
   }
