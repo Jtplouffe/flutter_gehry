@@ -1,8 +1,8 @@
-name: flutter_responsive_layout
+name: flutter_gehry
 description: A Flutter package that provides a way to easily do a responsive layout, using breakpoints.
 version: 1.0.0
-homepage: https://github.com/Jtplouffe/flutter_responsive_layout
-repository: https://github.com/Jtplouffe/flutter_responsive_layout
+homepage: https://github.com/Jtplouffe/flutter_gehry
+repository: https://github.com/Jtplouffe/flutter_gehry
 platforms:
   android:
   ios:

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_responsive_layout/src/enums/breakpoints.enum.dart';
+import 'package:flutter_gehry/flutter_gehry.dart';
 
 class ResponsiveBreakpoints {
   /// Minimum width in pixel for the [Breakpoints.sm] breakpoint.

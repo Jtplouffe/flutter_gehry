@@ -105,7 +105,7 @@ padding.
 
 #### ResponsiveSizedBox
 
-This widget is a wrapper around the `Sizedbox` widget.
+This widget is a wrapper around the `SizedBox` widget.
 
 This widget takes an instance of `ResponsiveSizedBoxData` for each breakpoint.
 

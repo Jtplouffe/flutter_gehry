@@ -1,8 +1,8 @@
-import 'package:flutter_responsive_layout/src/enums/breakpoints.enum.dart';
+import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Used to store some data for different breakpoints.
 class ResponsiveBreakpointData<D> {
-  /// All of data, from sm to xxl.
+  /// All of data, from xs to xl.
   final List<D?> data;
 
   ResponsiveBreakpointData({

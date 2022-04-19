@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_responsive_layout/flutter_responsive_layout.dart';
+import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Flexible].
 class ResponsiveFlexible extends BaseResponsiveWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_responsive_layout/flutter_responsive_layout.dart';
+import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Flex].
-/// For a [Row], use [ResponsiveBreakpointData.horizontal] and for a [Column] use [ResponsiveBreakpointData.vertical]
+/// For a [Row], use [ResponsiveBreakpointData.horizontal], and for a [Column], use [ResponsiveBreakpointData.vertical]
 class ResponsiveFlex extends BaseResponsiveWidget {
   final ResponsiveBreakpointData<ResponsiveFlexData> data;
 
