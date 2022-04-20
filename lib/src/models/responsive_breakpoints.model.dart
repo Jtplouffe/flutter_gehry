@@ -3,7 +3,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 class ResponsiveBreakpoints {
   /// Minimum width in pixel for the [Breakpoints.sm] breakpoint.
-  /// Must be more than 0 ([Breakpoints.xs]) less than [md].
+  /// Must be more than 0 (ie. [Breakpoints.xs]) less than [md].
   final double sm;
 
   /// Minimum width in pixel for the [Breakpoints.md] breakpoint.

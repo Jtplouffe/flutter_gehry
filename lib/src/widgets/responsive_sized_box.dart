@@ -2,10 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [SizedBox].
-class ResponsiveSizedBox extends BaseResponsiveWidget {
+class ResponsiveSizedBox extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<ResponsiveSizedBoxData> data;
 
-  /// Widget tha will be provided to [SizedBox.child].
+  /// Child of the [SizedBox].
   final Widget? child;
 
   ResponsiveSizedBox({
@@ -31,6 +31,7 @@ class ResponsiveSizedBox extends BaseResponsiveWidget {
   }
 }
 
+/// Data that will be passed to [SizedBox] for the current breakpoint.
 class ResponsiveSizedBoxData {
   final double? width;
   final double? height;

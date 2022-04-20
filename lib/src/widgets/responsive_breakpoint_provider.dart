@@ -1,9 +1,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
-/// This widget providers the [ResponsiveBreakpoints] to its [child].
+/// This widget provides the [ResponsiveBreakpoints] to his [child].
 /// It also provides the current [Breakpoints] via an [InheritedWidget], which will rebuild widget that depend on it
-/// whenever the current [Breakpoints] changes
+/// whenever the current [Breakpoints] changes.
+///
+/// This widget should ideally be placed at the top of the widget tree.
 class ResponsiveBreakpointsProvider extends StatelessWidget {
   /// Breakpoints at which the current [Breakpoints] will change.
   final ResponsiveBreakpoints breakpoints;
@@ -53,10 +55,10 @@ class ResponsiveBreakpointsProvider extends StatelessWidget {
 
 /// Data that will be provided in the context
 class ResponsiveBreakpointProviderScope extends InheritedWidget {
-  /// [ResponsiveBreakpoints] that will be used to determine the [breakpoint]
+  /// [ResponsiveBreakpoints] that will be used to determine the [breakpoint].
   final ResponsiveBreakpoints breakpoints;
 
-  /// Current [Breakpoints]
+  /// Current [Breakpoints].
   final Breakpoints breakpoint;
 
   const ResponsiveBreakpointProviderScope({

@@ -1,17 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
-/// Base widget for responsive widgets.
+/// Mixin for responsive stateless widgets.
 ///
-/// This class providers the [buildResponsive] method, which will automatically rebuilds whenever the current
+/// This class provides the [buildResponsive] method, which will automatically rebuilds whenever the current
 /// [Breakpoints] changes.
-abstract class BaseResponsiveWidget extends StatelessWidget {
-  const BaseResponsiveWidget({
-    Key? key,
-  }) : super(key: key);
-
-  /// This method should not be overridden.
-  /// Use [buildResponsive] instead, or use [StatelessWidget] or [StatefulWidget].
+mixin ResponsiveStatelessWidgetMixin on StatelessWidget {
+  /// This method should not be overridden, use [buildResponsive] instead.
   @override
   @mustCallSuper
   Widget build(BuildContext context) {

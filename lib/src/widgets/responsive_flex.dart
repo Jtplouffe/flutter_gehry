@@ -2,11 +2,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Flex].
-/// For a [Row], use [ResponsiveBreakpointsData.horizontal], and for a [Column], use [ResponsiveBreakpointsData.vertical]
-class ResponsiveFlex extends BaseResponsiveWidget {
+/// For a [Row], use [ResponsiveBreakpointsData.horizontal], and for a [Column], use [ResponsiveBreakpointsData.vertical].
+class ResponsiveFlex extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<ResponsiveFlexData> data;
 
-  /// List of widget that will be passed to [Row.children] or [Column.children], depending on the current breakpoint
+  /// List of widget that will be passed to [Flex.children].
   final List<Widget> children;
 
   ResponsiveFlex({
@@ -23,7 +23,6 @@ class ResponsiveFlex extends BaseResponsiveWidget {
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final flexData = data.getForBreakpoint(breakpoint);
-
     if (flexData == null) return const SizedBox.shrink();
 
     return Flex(
@@ -40,6 +39,7 @@ class ResponsiveFlex extends BaseResponsiveWidget {
   }
 }
 
+/// Data that will be passed to [Flex] for the current breakpoint.
 class ResponsiveFlexData {
   /// Direction of the children, will be provided to [Flex.direction].
   final Axis direction;
@@ -76,6 +76,7 @@ class ResponsiveFlexData {
     this.clipBehavior = Clip.none,
   });
 
+  /// Same as [ResponsiveFlexData], but automatically sets [direction] to [Axis.horizontal].
   const ResponsiveFlexData.horizontal({
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
@@ -86,6 +87,7 @@ class ResponsiveFlexData {
     this.clipBehavior = Clip.none,
   }) : direction = Axis.horizontal;
 
+  /// Same as [ResponsiveFlexData], but automatically sets [direction] to [Axis.vertical].
   const ResponsiveFlexData.vertical({
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,

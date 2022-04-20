@@ -3,7 +3,7 @@
 A Flutter package that provides a way to do a responsive layout. This package uses a mobile-first
 breakpoint approach.
 
-### Usage
+## Usage
 
 In order to use this package, you must wrap your app with `ResponsiveBreakpointsProvider`.
 
@@ -44,7 +44,7 @@ of `ResponsiveBreakpointsProvider`.
 Widgets that depend on `ResponsiveBreakpointsProvider` will only be rebuilt when the current
 breakpoint change, instead of whenever the window size changes.
 
-### Responsive widgets
+## Responsive widgets
 
 Multiple widgets are provided by the package. Pull requests are always welcome if you want to add
 more widgets.
@@ -63,8 +63,8 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsivePadding(
-        sm: const EdgeInsets.all(11),
-        xl: const EdgeInsets.all(31),
+        sm: const EdgeInsets.all(12),
+        xl: const EdgeInsets.all(32),
         child: const Text("Responsive padding")
     );
   }
@@ -75,7 +75,19 @@ In this example, if the current breakpoint is `md`, since we did not provide an 
 the `md` breakpoint, the value of the `sm` breakpoint will be used. If we hadn't provided a value
 for the `sm` breakpoint, the child would have been used without adding any padding.
 
-#### ResponsiveFlex
+### ResponsiveBuilder
+
+Same as `ResponsiveWidget`, but with `WidgetBuilder`, which is
+a `Widget Function(BuildContext context)` instead of a `Widget`.
+
+### ResponsiveDecoratedBox
+
+THis widget is a wrapper around the `DecoratedBox` widget.
+
+If there is no data for the current breakpoint, the child will be directly returned. If the child is
+null, a `SizedBox.shrink()` will be used.
+
+### ResponsiveFlex
 
 This widget is a wrapper around the `Flex` widget, which is the base widget of both `Row`
 and `column`. This can be used to display a list of widget with a different direction, depending on
@@ -83,7 +95,7 @@ the current breakpoint.
 
 This widget takes an instance of `ResponsiveFlexData` for each breakpoint.
 
-#### ResponsiveFlexible
+### ResponsiveFlexible
 
 This widget is a wrapper around the `Flexible` widget, and should only be used as the child of
 a `Flex` widget.
@@ -94,7 +106,11 @@ extends `ResponsiveFlexibleData`, represents the `Expanded` widget.
 
 If there is no data for the current breakpoint, a `SizedBox.shrink()` will be returned.
 
-#### ResponsivePadding
+### ResponsiveListView
+
+This widget is a wrapper around the `ListView` widget.
+
+### ResponsivePadding
 
 This widget is a wrapper around the `Padding` widget.
 
@@ -103,7 +119,7 @@ This widget takes an instance of `EdgeInsets` for each breakpoint.
 If there is no data for the current breakpoint, the child will be directly returned, without any
 padding.
 
-#### ResponsiveSizedBox
+### ResponsiveSizedBox
 
 This widget is a wrapper around the `SizedBox` widget.
 
@@ -112,21 +128,18 @@ This widget takes an instance of `ResponsiveSizedBoxData` for each breakpoint.
 If there is no data for the current breakpoint, a `SizedBox` with no width and no height will be
 returned.
 
-#### ResponsiveWidget
+### ResponsiveText
+
+This widget is a wrapper around the `Text` widget.
+
+Just like the normal `Text` widget, the first argument must be a `String`. The rest of the arguments
+arguments must be provided via the breakpoints with a `ResponsiveTextData`. By passing a `text`
+to `ResponsiveTextData`, it will override the `text` passed to the widget for the current
+breakpoint.
+
+### ResponsiveWidget
 
 This is a simple widget that takes a `Widget` for each breakpoint and returns the widget for the
 current breakpoint.
 
 If there is no data for the current breakpoint, a `SizedBox.shrink()` will be returned.
-
-#### ResponsiveBuilder
-
-Same as `ResponsiveWidget`, but with `WidgetBuilder`, which is
-a `Widget Function(BuildContext context)` instead of a `Widget`.
-
-#### ResponsiveDecoratedBox
-
-THis widget is a wrapper around the `DecoratedBox` widget.
-
-If there is no data for the current breakpoint, the child will be directly returned.
-If the child is null, a `SizedBox.shrink()` will be used.

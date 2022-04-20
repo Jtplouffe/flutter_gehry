@@ -13,9 +13,9 @@ class ResponsiveBreakpointsData<D> {
     required D? xl,
   }) : data = [xs, sm, md, lg, xl];
 
-  /// Returns the data fro for the breakpoint.
+  /// Returns the data for the breakpoint.
   /// This is a mobile-first approach, where if there is no data for the breakpoint,
-  /// 1the data of the next non-null smaller breakpoint will be used.
+  /// the data of the previous (smaller) non-null breakpoint will be used.
   D? getForBreakpoint(Breakpoints breakpoint) {
     // Start from the breakpoint and go down until a data is not null.
     for (int i = breakpoint.index; i >= 0; i--) {

@@ -2,8 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Padding].
-class ResponsivePadding extends BaseResponsiveWidget {
+class ResponsivePadding extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<EdgeInsets> data;
+
+  /// Child of the [Padding].
   final Widget child;
 
   ResponsivePadding({
@@ -22,7 +24,6 @@ class ResponsivePadding extends BaseResponsiveWidget {
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final padding = data.getForBreakpoint(breakpoint);
-
     if (padding == null) return child;
 
     return Padding(

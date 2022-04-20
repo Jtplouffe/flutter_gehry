@@ -2,10 +2,13 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [DecoratedBox].
-class ResponsiveDecoratedBox extends BaseResponsiveWidget {
+///
+/// If no data has been provided for the current breakpoint, the [child] will be directly returned, without a [DecoratedBox].
+/// If the [child] is null, a [SizedBox.shrink] will be returned instead.
+class ResponsiveDecoratedBox extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<Decoration> data;
 
-  /// Widget that will be passed to [DecoratedBox.child]
+  /// Child of the [DecoratedBox].
   final Widget? child;
 
   ResponsiveDecoratedBox({

@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Flexible].
-class ResponsiveFlexible extends BaseResponsiveWidget {
+class ResponsiveFlexible extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<ResponsiveFlexibleData> data;
   final Widget child;
 
@@ -30,6 +30,7 @@ class ResponsiveFlexible extends BaseResponsiveWidget {
   }
 }
 
+/// Data that will be passed to [Flexible] for the current breakpoint.
 class ResponsiveFlexibleData {
   /// Flex value that will be provided to [Flexible.flex].
   final int flex;

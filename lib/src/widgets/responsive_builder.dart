@@ -1,7 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
-class ResponsiveBuilder extends BaseResponsiveWidget {
+/// Wrapper around [Builder].
+///
+/// If no data has been provided for the current breakpoint, a [SizedBox.shrink] will be returned.
+class ResponsiveBuilder extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<WidgetBuilder> data;
 
   ResponsiveBuilder({
