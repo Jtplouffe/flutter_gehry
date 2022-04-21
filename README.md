@@ -159,7 +159,7 @@ Usage:
 ```dart
 ResponsiveFlex(
   xs: const ResponsiveFlexData.vertical(),
-  lg: const ResponsiveFlexData.horizantol(),
+  lg: const ResponsiveFlexData.horizontal(),
   children: const [
     Text("The children will be displayed vertically (Column) on the xs, sm and md breakpoint"),
     Text("The children will be displayed horizontally (Row) on the lg and xl breakpoint"),
