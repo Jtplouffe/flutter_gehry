@@ -4,6 +4,8 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 /// Wrapper around [Flexible].
 class ResponsiveFlexible extends StatelessWidget with ResponsiveStatelessWidgetMixin {
   final ResponsiveBreakpointsData<ResponsiveFlexibleData> data;
+
+  /// Child of the [Flexible].
   final Widget child;
 
   ResponsiveFlexible({

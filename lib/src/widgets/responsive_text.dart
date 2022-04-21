@@ -23,6 +23,8 @@ class ResponsiveText extends StatelessWidget with ResponsiveStatelessWidgetMixin
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final textData = data.getForBreakpoint(breakpoint);
 
+    SizedBox.square(dimension: 2);
+
     return Text(
       textData?.text ?? text,
       style: textData?.style,

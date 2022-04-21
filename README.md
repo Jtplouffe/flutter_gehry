@@ -5,6 +5,21 @@ breakpoint approach.
 
 <br />
 
+### Table of content
+
+1. [Usage](#usage)
+2. [Responsive widgets](#responsive-widgets)
+    1. [ResponsiveBuilder](#responsivebuilder)
+    2. [ResponsiveConstrainedBox](#responsiveconstrainedbox)
+    3. [ResponsiveDecoratedBox](#responsivedecoratedbox)
+    4. [ResponsiveFlex](#responsiveflex)
+    5. [ResponsiveFlexible](#responsiveflexible)
+    6. [ResponsiveListView](#responsivelistview)
+    7. [ResponsivePadding](#responsivepadding)
+    8. [ResponsiveSizedBox](#responsivesizedbox)
+    9. [ResponsiveText](#responsivetext)
+    10. [ResponsiveWidget](#responsivewidget)
+
 ## Usage
 
 In order to use this package, you must wrap your app with `ResponsiveBreakpointsProvider`.
@@ -50,8 +65,8 @@ breakpoint change, instead of whenever the window size changes.
 
 ## Responsive widgets
 
-Multiple widgets are provided by the package. Pull requests are always welcome if you want to add
-more widgets.
+Multiple widgets are provided by the package. Do you think there is a widget missing? Open an issue
+and I will look at it!
 
 Responsive widgets all extends `BaseResponsiveWidget`, which provides the `buildResponsive` method,
 that will be called with a `BuildContext` and the current `Breakpoints` to build the widget.
@@ -67,9 +82,9 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsivePadding(
-        sm: const EdgeInsets.all(12),
-        xl: const EdgeInsets.all(32),
-        child: const Text("Responsive padding")
+      sm: const EdgeInsets.all(12),
+      xl: const EdgeInsets.all(32),
+      child: const Text("Responsive padding"),
     );
   }
 }
@@ -86,14 +101,49 @@ for the `sm` breakpoint, the child would have been used without adding any paddi
 Same as `ResponsiveWidget`, but with `WidgetBuilder`, which is
 a `Widget Function(BuildContext context)` instead of a `Widget`.
 
+Usage:
+```dart
+ResponsiveBuilder(
+  xs: (context) => const Text("This will be displayed on xs, sm and md breakpoint"),
+  lg: (context) => const Text("This will be displayed on lg and xl breakpoint"),
+);
+```
+
+<br />
+
+### ResponsiveConstrainedBox
+
+This widget is a wrapper around the `ConstrainedBox` widget.
+
+If no constraints has been provided for the current breakpoint, the child will be directly returned.
+If the child is also null, a `SizedBox.shrink()` will be used.
+
+Usage:
+```dart
+ResponsiveConstrainedBox(
+  xs: const BoxConstraints.tightFor(width: 100),
+  lg: const BoxConstraints.tightFor(width: 200),
+  child: const Text("This text will be constrained depending on the breakpoint"),
+);
+```
+
 <br />
 
 ### ResponsiveDecoratedBox
 
-THis widget is a wrapper around the `DecoratedBox` widget.
+This widget is a wrapper around the `DecoratedBox` widget.
 
 If there is no data for the current breakpoint, the child will be directly returned. If the child is
 null, a `SizedBox.shrink()` will be used.
+
+Usage:
+```dart
+ResponsiveDecoratedBox(
+  xs: const BoxDecoration(color: Colors.red),
+  xs: const BoxDecoration(color: Colors.blue),
+  child: const Text("The background color will change depending on the breakpoint"),
+);
+```
 
 <br />
 
@@ -104,6 +154,18 @@ and `column`. This can be used to display a list of widget with a different dire
 the current breakpoint.
 
 This widget takes an instance of `ResponsiveFlexData` for each breakpoint.
+
+Usage:
+```dart
+ResponsiveFlex(
+  xs: const ResponsiveFlexData.vertical(),
+  lg: const ResponsiveFlexData.horizantol(),
+  children: const [
+    Text("The children will be displayed vertically (Column) on the xs, sm and md breakpoint"),
+    Text("The children will be displayed horizontally (Row) on the lg and xl breakpoint"),
+  ],
+);
+```
 
 <br />
 
@@ -135,6 +197,16 @@ This widget takes an instance of `EdgeInsets` for each breakpoint.
 If there is no data for the current breakpoint, the child will be directly returned, without any
 padding.
 
+Usage:
+```dart
+ResponsivePadding(
+  xs: const EdgeInsets.all(8),
+  md: const EdgeInsets.all(24),
+  lg: const EdgeInsets.all(42),
+  child: Text("This text will have more padding the greater the breakpoint is"),
+);
+```
+
 <br />
 
 ### ResponsiveSizedBox
@@ -145,6 +217,16 @@ This widget takes an instance of `ResponsiveSizedBoxData` for each breakpoint.
 
 If there is no data for the current breakpoint, a `SizedBox` with no width and no height will be
 returned.
+
+Usage:
+```dart
+ResponsiveSizedBox(
+  xs: const ResponsiveSizedBoxData(height: 20),
+  md: const ResponsiveSizedBoxData(height: 32),
+  xl: const ResponsiveSizedBoxData(height: 52),
+  child: Text("The SizedBox will take more vertical space the greater the breakpoint is"),
+);
+```
 
 <br />
 
@@ -157,6 +239,23 @@ arguments must be provided via the breakpoints with a `ResponsiveTextData`. By p
 to `ResponsiveTextData`, it will override the `text` passed to the widget for the current
 breakpoint.
 
+Usage:
+```dart
+ResponsiveText(
+  "This is the text that will be displayed",
+  xs: const ResponsiveTextData(
+    style: TextStyle(fontSize: 12),
+  ),
+  md: const ResponsiveTextData(
+    style: TextStyle(fontSize: 16),
+  ),
+  xl: const ResponsiveTextData(
+    style: TextStyle(fontSize: 20),
+    text: "This text will override the default text on the xl breakpoint",
+  ),
+);
+```
+
 <br />
 
 ### ResponsiveWidget
@@ -165,3 +264,14 @@ This is a simple widget that takes a `Widget` for each breakpoint and returns th
 current breakpoint.
 
 If there is no data for the current breakpoint, a `SizedBox.shrink()` will be returned.
+
+Usage:
+```dart
+ResponsiveWidget(
+  xs: const SizedBox.square(dimension: 12),
+  md: const Text("This Text widget will be displayed on the md and lg breakpoint"),
+  xl: const Center(
+    child: Text("This Text widget will be displayed on the xl breakpoint"),
+  ),
+);
+```
