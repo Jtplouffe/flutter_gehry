@@ -11,3 +11,7 @@
 
 * Added `ResponsiveBreakpointsProvider.of(context).pick()`
   and `ResponsiveBreakpointsProvider.of(context).maybePick()`.
+
+## 1.3.0
+
+* Added missing operators to the `Breakpoints` enum.
