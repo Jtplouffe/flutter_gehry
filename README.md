@@ -50,7 +50,7 @@ There are 5 breakpoints: `xs`, `sm`, `md`, `lg`, and `xl`.
 The defaults values for those breakpoints are:
 
 - xs: `0` (cannot be configured)
-- sm: `460`
+- sm: `640`
 - md: `768`
 - lg: `1024`
 - xl: `1280`
@@ -60,6 +60,23 @@ of `ResponsiveBreakpointsProvider`.
 
 Widgets that depend on `ResponsiveBreakpointsProvider` will only be rebuilt when the current
 breakpoint change, instead of whenever the window size changes.
+
+<br />
+
+If you need some arbitrary value depending on the current breakpoint, you can use
+`ResponsiveBreakpointsProvider.of(context).maybePick(...)`
+or `ResponsiveBreakpointsProvider.of(context).pick(...)`.
+The difference between both is that `pick` must be provided the `xs` value, whereas the `maybePick`
+will just return `null` of no data matches the current breakpoint.
+
+For example, if you want as string to change depending on the breakpoint:
+```dart
+const value = ResponsiveBreakpointsProvider.of(context).pick(
+  xs: "This string will be returned on the xs and sm breakpoint",
+  md: "This string will be returned on the md and lg breakpoint",
+  xl: "This string will be returned on the xl breakpoint",
+);
+```
 
 <br />
 

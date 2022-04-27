@@ -19,9 +19,9 @@ class ResponsiveBreakpoints {
   final double xl;
 
   const ResponsiveBreakpoints({
-    this.sm = 320,
-    this.md = 640,
-    this.lg = 960,
+    this.sm = 640,
+    this.md = 768,
+    this.lg = 1024,
     this.xl = 1280,
   }) : assert(0 < sm && sm < md && md < lg && lg < xl);
 

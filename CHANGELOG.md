@@ -4,5 +4,10 @@
 
 ## 1.1.0
 
-* Added ResponsiveConstrainedBox widget
+* Added `ResponsiveConstrainedBox` widget
 * Added usage for most widgets
+
+## 1.2.0
+
+* Added `ResponsiveBreakpointsProvider.of(context).pick()`
+  and `ResponsiveBreakpointsProvider.of(context).maybePick()`.

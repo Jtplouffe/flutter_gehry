@@ -74,4 +74,15 @@ class ResponsiveBreakpointProviderScope extends InheritedWidget {
   bool updateShouldNotify(covariant ResponsiveBreakpointProviderScope oldWidget) {
     return breakpoints != oldWidget.breakpoints || breakpoint != oldWidget.breakpoint;
   }
+
+  /// Returns some value for the current breakpoint.
+  /// Returns null if no data matches the current breakpoint.
+  D? maybePick<D>({D? xs, D? sm, D? md, D? lg, D? xl}) {
+    return ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl).getForBreakpoint(breakpoint);
+  }
+
+  /// Same as [maybePick], but with the [xs] required, so it never returns null.
+  D pick<D>({required D xs, D? sm, D? md, D? lg, D? xl}) {
+    return ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl).getForBreakpoint(breakpoint)!;
+  }
 }

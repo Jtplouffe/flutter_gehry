@@ -1,6 +1,6 @@
 name: flutter_gehry
 description: A Flutter package that provides a way to easily do a responsive layout, using breakpoints.
-version: 1.1.0
+version: 1.2.0
 homepage: https://github.com/Jtplouffe/flutter_gehry
 repository: https://github.com/Jtplouffe/flutter_gehry
 platforms:

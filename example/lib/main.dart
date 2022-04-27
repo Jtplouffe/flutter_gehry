@@ -101,10 +101,14 @@ class ResponsivePage extends StatelessWidget {
               child: ResponsiveFlex(
                 xs: const ResponsiveFlexData.vertical(crossAxisAlignment: CrossAxisAlignment.stretch),
                 md: const ResponsiveFlexData.vertical(),
-                children: const [
+                children: [
                   Text(
-                    "Sidebar title",
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    ResponsiveBreakpointsProvider.of(context).pick(
+                      xs: "xs sidebar title",
+                      md: "md sidebar title",
+                      xl: "xl sidebar title",
+                    ),
+                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
