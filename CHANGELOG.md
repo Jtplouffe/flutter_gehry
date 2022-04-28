@@ -17,3 +17,4 @@
 * Added missing operators to the `Breakpoints` enum.
 * Renamed `ResponsiveBreakpoint` to `BreakpointValues`.
 * Renamed `ResponsiveBreakpointsData` to `BreakpointsData`.
+* Refactored `ResponsiveFlex`.

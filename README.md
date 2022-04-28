@@ -170,13 +170,15 @@ This widget is a wrapper around the `Flex` widget, which is the base widget of b
 and `column`. This can be used to display a list of widget with a different direction, depending on
 the current breakpoint.
 
-This widget takes an instance of `ResponsiveFlexData` for each breakpoint.
+For each values, this widget takes a `BreakpointsData`, and falls back to `Flex`'s default values.
 
 Usage:
 ```dart
 ResponsiveFlex(
-  xs: const ResponsiveFlexData.vertical(),
-  lg: const ResponsiveFlexData.horizontal(),
+  direction: const BreakpointsData(
+    xs: Axis.vertical,
+    lg: Axis.horizontal,
+  ),
   children: const [
     Text("The children will be displayed vertically (Column) on the xs, sm and md breakpoint"),
     Text("The children will be displayed horizontally (Row) on the lg and xl breakpoint"),
