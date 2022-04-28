@@ -35,22 +35,16 @@ class ResponsivePage extends StatelessWidget {
       xs: const EdgeInsets.all(8),
       md: const EdgeInsets.all(12),
       child: ResponsiveFlex(
-        xs: const ResponsiveFlexData.vertical(),
-        md: const ResponsiveFlexData.horizontal(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        direction: const BreakpointsData(
+          xs: Axis.vertical,
+          md: Axis.horizontal,
         ),
+        crossAxisAlignment: const BreakpointsData(md: CrossAxisAlignment.stretch),
         children: [
           ResponsiveFlexible(
             md: const ResponsiveExpandedData(),
-            child: ResponsiveFlex(
-              xs: const ResponsiveFlexData(
-                direction: Axis.vertical,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-              ),
-              md: const ResponsiveFlexData(
-                direction: Axis.vertical,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const ColoredBox(
                   color: Colors.deepPurpleAccent,
@@ -99,8 +93,11 @@ class ResponsivePage extends StatelessWidget {
               xs: const EdgeInsets.all(12),
               md: const EdgeInsets.all(20),
               child: ResponsiveFlex(
-                xs: const ResponsiveFlexData.vertical(crossAxisAlignment: CrossAxisAlignment.stretch),
-                md: const ResponsiveFlexData.vertical(),
+                direction: const BreakpointsData.all(Axis.vertical),
+                crossAxisAlignment: const BreakpointsData(
+                  xs: CrossAxisAlignment.stretch,
+                  md: CrossAxisAlignment.center,
+                ),
                 children: [
                   Text(
                     ResponsiveBreakpointsProvider.of(context).pick(
