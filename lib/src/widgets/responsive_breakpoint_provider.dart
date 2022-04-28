@@ -1,21 +1,21 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
-/// This widget provides the [ResponsiveBreakpoints] to his [child].
+/// This widget provides the [BreakpointValues] to his [child].
 /// It also provides the current [Breakpoints] via an [InheritedWidget], which will rebuild widget that depend on it
 /// whenever the current [Breakpoints] changes.
 ///
 /// This widget should ideally be placed at the top of the widget tree.
 class ResponsiveBreakpointsProvider extends StatelessWidget {
   /// Breakpoints at which the current [Breakpoints] will change.
-  final ResponsiveBreakpoints breakpoints;
+  final BreakpointValues breakpoints;
 
   /// Child which will be able to access the current [Breakpoints].
   final Widget child;
 
   const ResponsiveBreakpointsProvider({
     Key? key,
-    this.breakpoints = const ResponsiveBreakpoints(),
+    this.breakpoints = const BreakpointValues(),
     required this.child,
   }) : super(key: key);
 
@@ -55,8 +55,8 @@ class ResponsiveBreakpointsProvider extends StatelessWidget {
 
 /// Data that will be provided in the context
 class ResponsiveBreakpointProviderScope extends InheritedWidget {
-  /// [ResponsiveBreakpoints] that will be used to determine the [breakpoint].
-  final ResponsiveBreakpoints breakpoints;
+  /// [BreakpointValues] that will be used to determine the [breakpoint].
+  final BreakpointValues breakpoints;
 
   /// Current [Breakpoints].
   final Breakpoints breakpoint;
@@ -78,11 +78,11 @@ class ResponsiveBreakpointProviderScope extends InheritedWidget {
   /// Returns some value for the current breakpoint.
   /// Returns null if no data matches the current breakpoint.
   D? maybePick<D>({D? xs, D? sm, D? md, D? lg, D? xl}) {
-    return ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl).getForBreakpoint(breakpoint);
+    return BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl).getForBreakpoint(breakpoint);
   }
 
   /// Same as [maybePick], but with the [xs] required, so it never returns null.
   D pick<D>({required D xs, D? sm, D? md, D? lg, D? xl}) {
-    return ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl).getForBreakpoint(breakpoint)!;
+    return BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl).getForBreakpoint(breakpoint)!;
   }
 }

@@ -7,7 +7,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [ListView].
 class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<ResponsiveListViewData> data;
+  final BreakpointsData<ResponsiveListViewData> data;
 
   /// Passed to [ListView.custom]
   final SliverChildDelegate childrenDelegate;
@@ -32,7 +32,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
     List<Widget> children = const [],
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         childrenDelegate = SliverChildListDelegate(
           children,
           addAutomaticKeepAlives: addAutomaticKeepAlives,
@@ -56,7 +56,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         childrenDelegate = SliverChildBuilderDelegate(
           itemBuilder,
           childCount: itemCount,
@@ -82,7 +82,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         childrenDelegate = SliverChildBuilderDelegate(
           (context, index) {
             final int itemIndex = index ~/ 2;
@@ -113,7 +113,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

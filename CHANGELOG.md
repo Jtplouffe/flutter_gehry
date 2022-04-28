@@ -15,3 +15,5 @@
 ## 1.3.0
 
 * Added missing operators to the `Breakpoints` enum.
+* Renamed `ResponsiveBreakpoint` to `BreakpointValues`.
+* Renamed `ResponsiveBreakpointsData` to `BreakpointsData`.

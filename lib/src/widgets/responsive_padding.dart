@@ -3,7 +3,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Padding].
 class ResponsivePadding extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<EdgeInsets> data;
+  final BreakpointsData<EdgeInsets> data;
 
   /// Child of the [Padding].
   final Widget child;
@@ -16,7 +16,7 @@ class ResponsivePadding extends StatelessWidget with ResponsiveStatelessWidgetMi
     EdgeInsets? lg,
     EdgeInsets? xl,
     required this.child,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(
           key: key,
         );

@@ -5,7 +5,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 ///
 /// If no data has been provided for the current breakpoint, a [SizedBox.shrink] will be returned.
 class ResponsiveBuilder extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<WidgetBuilder> data;
+  final BreakpointsData<WidgetBuilder> data;
 
   ResponsiveBuilder({
     Key? key,
@@ -14,7 +14,7 @@ class ResponsiveBuilder extends StatelessWidget with ResponsiveStatelessWidgetMi
     WidgetBuilder? md,
     WidgetBuilder? lg,
     WidgetBuilder? xl,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

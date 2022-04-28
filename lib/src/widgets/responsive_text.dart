@@ -3,7 +3,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Text].
 class ResponsiveText extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<ResponsiveTextData> data;
+  final BreakpointsData<ResponsiveTextData> data;
 
   /// Default text. Can be overridden for the current breakpoint by passing a value to [ResponsiveTextData.text].
   final String text;
@@ -16,7 +16,7 @@ class ResponsiveText extends StatelessWidget with ResponsiveStatelessWidgetMixin
     ResponsiveTextData? md,
     ResponsiveTextData? lg,
     ResponsiveTextData? xl,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

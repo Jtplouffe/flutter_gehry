@@ -3,7 +3,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [SizedBox].
 class ResponsiveSizedBox extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<ResponsiveSizedBoxData> data;
+  final BreakpointsData<ResponsiveSizedBoxData> data;
 
   /// Child of the [SizedBox].
   final Widget? child;
@@ -16,7 +16,7 @@ class ResponsiveSizedBox extends StatelessWidget with ResponsiveStatelessWidgetM
     ResponsiveSizedBoxData? lg,
     ResponsiveSizedBoxData? xl,
     this.child,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

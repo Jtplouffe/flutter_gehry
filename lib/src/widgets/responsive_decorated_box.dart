@@ -6,7 +6,7 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 /// If no data has been provided for the current breakpoint, the [child] will be directly returned, without a [DecoratedBox].
 /// If the [child] is null, a [SizedBox.shrink] will be returned instead.
 class ResponsiveDecoratedBox extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<Decoration> data;
+  final BreakpointsData<Decoration> data;
 
   /// Child of the [DecoratedBox].
   final Widget? child;
@@ -19,7 +19,7 @@ class ResponsiveDecoratedBox extends StatelessWidget with ResponsiveStatelessWid
     Decoration? lg,
     Decoration? xl,
     this.child,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override

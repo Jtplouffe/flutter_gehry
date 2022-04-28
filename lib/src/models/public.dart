@@ -1,2 +1,2 @@
-export './responsive_breakpoint_data.model.dart';
-export './responsive_breakpoints.model.dart';
+export './breakpoint_values.dart';
+export './breakpoints_data.model.dart';

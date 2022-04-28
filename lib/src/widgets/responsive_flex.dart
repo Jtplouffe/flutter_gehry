@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Flex].
-/// For a [Row], use [ResponsiveBreakpointsData.horizontal], and for a [Column], use [ResponsiveBreakpointsData.vertical].
+/// For a [Row], use [BreakpointsData.horizontal], and for a [Column], use [BreakpointsData.vertical].
 class ResponsiveFlex extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final ResponsiveBreakpointsData<ResponsiveFlexData> data;
+  final BreakpointsData<ResponsiveFlexData> data;
 
   /// List of widget that will be passed to [Flex.children].
   final List<Widget> children;
@@ -17,7 +17,7 @@ class ResponsiveFlex extends StatelessWidget with ResponsiveStatelessWidgetMixin
     ResponsiveFlexData? lg,
     ResponsiveFlexData? xl,
     required this.children,
-  })  : data = ResponsiveBreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
+  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
         super(key: key);
 
   @override
