@@ -3,86 +3,51 @@ import 'package:flutter_gehry/flutter_gehry.dart';
 
 /// Wrapper around [Text].
 class ResponsiveText extends StatelessWidget with ResponsiveStatelessWidgetMixin {
-  final BreakpointsData<ResponsiveTextData> data;
+  /// Default text. Can be overridden for the current breakpoint by passing a value to [text].
+  final String defaultText;
 
-  /// Default text. Can be overridden for the current breakpoint by passing a value to [ResponsiveTextData.text].
-  final String text;
-
-  ResponsiveText(
-    this.text, {
-    Key? key,
-    ResponsiveTextData? xs,
-    ResponsiveTextData? sm,
-    ResponsiveTextData? md,
-    ResponsiveTextData? lg,
-    ResponsiveTextData? xl,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(key: key);
-
-  @override
-  Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
-    final textData = data.getForBreakpoint(breakpoint);
-
-    return Text(
-      textData?.text ?? text,
-      style: textData?.style,
-      strutStyle: textData?.strutStyle,
-      textAlign: textData?.textAlign,
-      textDirection: textData?.textDirection,
-      locale: textData?.locale,
-      softWrap: textData?.softWrap,
-      overflow: textData?.overflow,
-      textScaleFactor: textData?.textScaleFactor,
-      maxLines: textData?.maxLines,
-      semanticsLabel: textData?.semanticsLabel,
-      textWidthBasis: textData?.textWidthBasis,
-      textHeightBehavior: textData?.textHeightBehavior,
-    );
-  }
-}
-
-/// Data passed to [Text] for the current breakpoint.
-class ResponsiveTextData {
-  /// Overrides [ResponsiveText.text] for the current breakpoint.
-  final String? text;
+  /// Overrides [defaultText] for the current breakpoint.
+  final BreakpointsData<String>? text;
 
   /// Passed to [Text.style].
-  final TextStyle? style;
+  final BreakpointsData<TextStyle>? style;
 
   /// Passed to [Text.strutStyle].
-  final StrutStyle? strutStyle;
+  final BreakpointsData<StrutStyle>? strutStyle;
 
   /// Passed to [Text.textAlign].
-  final TextAlign? textAlign;
+  final BreakpointsData<TextAlign>? textAlign;
 
   /// Passed to [Text.textDirection].
-  final TextDirection? textDirection;
+  final BreakpointsData<TextDirection>? textDirection;
 
   /// Passed to [Text.locale].
-  final Locale? locale;
+  final BreakpointsData<Locale>? locale;
 
   /// Passed to [Text.softWrap].
-  final bool? softWrap;
+  final BreakpointsData<bool>? softWrap;
 
   /// Passed to [Text.overflow].
-  final TextOverflow? overflow;
+  final BreakpointsData<TextOverflow>? overflow;
 
   /// Passed to [Text.textScaleFactor].
-  final double? textScaleFactor;
+  final BreakpointsData<double>? textScaleFactor;
 
   /// Passed to [Text.maxLines].
-  final int? maxLines;
+  final BreakpointsData<int>? maxLines;
 
   /// Passed to [Text.semanticsLabel].
-  final String? semanticsLabel;
+  final BreakpointsData<String>? semanticsLabel;
 
   /// Passed to [Text.textWidthBasis].
-  final TextWidthBasis? textWidthBasis;
+  final BreakpointsData<TextWidthBasis>? textWidthBasis;
 
   /// Passed to [Text.textHeightBehavior].
-  final TextHeightBehavior? textHeightBehavior;
+  final BreakpointsData<TextHeightBehavior>? textHeightBehavior;
 
-  const ResponsiveTextData({
+  const ResponsiveText(
+    this.defaultText, {
+    Key? key,
     this.text,
     this.style,
     this.strutStyle,
@@ -96,5 +61,24 @@ class ResponsiveTextData {
     this.semanticsLabel,
     this.textWidthBasis,
     this.textHeightBehavior,
-  });
+  }) : super(key: key);
+
+  @override
+  Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
+    return Text(
+      text?.getForBreakpoint(breakpoint) ?? defaultText,
+      style: style?.getForBreakpoint(breakpoint),
+      strutStyle: strutStyle?.getForBreakpoint(breakpoint),
+      textAlign: textAlign?.getForBreakpoint(breakpoint),
+      textDirection: textDirection?.getForBreakpoint(breakpoint),
+      locale: locale?.getForBreakpoint(breakpoint),
+      softWrap: softWrap?.getForBreakpoint(breakpoint),
+      overflow: overflow?.getForBreakpoint(breakpoint),
+      textScaleFactor: textScaleFactor?.getForBreakpoint(breakpoint),
+      maxLines: maxLines?.getForBreakpoint(breakpoint),
+      semanticsLabel: semanticsLabel?.getForBreakpoint(breakpoint),
+      textWidthBasis: textWidthBasis?.getForBreakpoint(breakpoint),
+      textHeightBehavior: textHeightBehavior?.getForBreakpoint(breakpoint),
+    );
+  }
 }

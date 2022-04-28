@@ -18,3 +18,5 @@
 * Renamed `ResponsiveBreakpoint` to `BreakpointValues`.
 * Renamed `ResponsiveBreakpointsData` to `BreakpointsData`.
 * Refactored `ResponsiveFlex`.
+* Refactored `ResponsiveListView`.
+* Refactored `ResponsiveText`.

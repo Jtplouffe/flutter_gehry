@@ -254,23 +254,21 @@ ResponsiveSizedBox(
 This widget is a wrapper around the `Text` widget.
 
 Just like the normal `Text` widget, the first argument must be a `String`. The rest of the arguments
-arguments must be provided via the breakpoints with a `ResponsiveTextData`. By passing a `text`
-to `ResponsiveTextData`, it will override the `text` passed to the widget for the current
-breakpoint.
+arguments must be provided via the breakpoints with a `BreakpointsData`. By passing the `text`
+argument, of type `BreakpointsData<String>`, it will override the `defaultText` passed to the widget
+for the current breakpoint.
 
 Usage:
 ```dart
-ResponsiveText(
+const ResponsiveText(
   "This is the text that will be displayed",
-  xs: const ResponsiveTextData(
-    style: TextStyle(fontSize: 12),
+  text: BreakpointsData(
+    xl: "This text will override the default text on the xl breakpoint",
   ),
-  md: const ResponsiveTextData(
-    style: TextStyle(fontSize: 16),
-  ),
-  xl: const ResponsiveTextData(
-    style: TextStyle(fontSize: 20),
-    text: "This text will override the default text on the xl breakpoint",
+  style: BreakpointsData(
+    xs: TextStyle(fontSize: 12),
+    md: TextStyle(fontSize: 16),
+    xl: TextStyle(fontSize: 20),
   ),
 );
 ```

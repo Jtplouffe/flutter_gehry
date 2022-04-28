@@ -32,7 +32,7 @@ class ResponsiveFlex extends StatelessWidget with ResponsiveStatelessWidgetMixin
   /// List of widget that will be passed to [Flex.children].
   final List<Widget> children;
 
-  ResponsiveFlex({
+  const ResponsiveFlex({
     Key? key,
     required this.direction,
     this.mainAxisAlignment,
