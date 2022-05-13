@@ -12,23 +12,21 @@ class ResponsiveDecoratedBox extends StatelessWidget with ResponsiveStatelessWid
   final Widget? child;
 
   ResponsiveDecoratedBox({
-    Key? key,
+    super.key,
     Decoration? xs,
     Decoration? sm,
     Decoration? md,
     Decoration? lg,
     Decoration? xl,
     this.child,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(key: key);
+  }) : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final boxDecoration = data.getForBreakpoint(breakpoint);
-    if (boxDecoration == null) return child ?? const SizedBox.shrink();
 
     return DecoratedBox(
-      decoration: boxDecoration,
+      decoration: boxDecoration ?? const BoxDecoration(),
       child: child,
     );
   }

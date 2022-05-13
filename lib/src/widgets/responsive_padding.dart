@@ -9,25 +9,21 @@ class ResponsivePadding extends StatelessWidget with ResponsiveStatelessWidgetMi
   final Widget child;
 
   ResponsivePadding({
-    Key? key,
+    super.key,
     EdgeInsets? xs,
     EdgeInsets? sm,
     EdgeInsets? md,
     EdgeInsets? lg,
     EdgeInsets? xl,
     required this.child,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(
-          key: key,
-        );
+  }) : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final padding = data.getForBreakpoint(breakpoint);
-    if (padding == null) return child;
 
     return Padding(
-      padding: padding,
+      padding: padding ?? EdgeInsets.zero,
       child: child,
     );
   }

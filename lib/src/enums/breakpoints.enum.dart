@@ -3,10 +3,8 @@ enum Breakpoints {
   sm,
   md,
   lg,
-  xl,
-}
+  xl;
 
-extension BreakpointsExt on Breakpoints {
   bool operator >(Breakpoints other) => index > other.index;
 
   bool operator >=(Breakpoints other) => index >= other.index;

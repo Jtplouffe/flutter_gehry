@@ -20,3 +20,7 @@
 * Refactored `ResponsiveFlex`.
 * Refactored `ResponsiveListView`.
 * Refactored `ResponsiveText`.
+
+### 1.3.1
+
+* Changes for Dart 2.17

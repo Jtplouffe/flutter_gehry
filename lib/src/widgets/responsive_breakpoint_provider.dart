@@ -62,11 +62,11 @@ class ResponsiveBreakpointProviderScope extends InheritedWidget {
   final Breakpoints breakpoint;
 
   const ResponsiveBreakpointProviderScope({
-    Key? key,
+    super.key,
     required this.breakpoints,
     required this.breakpoint,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   /// Only notify when the [breakpoints] or the [breakpoint] changes. This helps a lot with performance, since we are
   /// only rebuilding widgets when the [breakpoint] changes, and not whenever the window's width changes.

@@ -9,15 +9,14 @@ class ResponsiveSizedBox extends StatelessWidget with ResponsiveStatelessWidgetM
   final Widget? child;
 
   ResponsiveSizedBox({
-    Key? key,
+    super.key,
     ResponsiveSizedBoxData? xs,
     ResponsiveSizedBoxData? sm,
     ResponsiveSizedBoxData? md,
     ResponsiveSizedBoxData? lg,
     ResponsiveSizedBoxData? xl,
     this.child,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(key: key);
+  }) : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {

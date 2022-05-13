@@ -31,7 +31,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
 
   /// Same as [ListView]
   ResponsiveListView({
-    Key? key,
+    super.key,
     this.scrollDirection,
     this.reverse,
     this.controller,
@@ -47,17 +47,16 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
     List<Widget> children = const [],
-  })  : childrenDelegate = SliverChildListDelegate(
+  }) : childrenDelegate = SliverChildListDelegate(
           children,
           addAutomaticKeepAlives: addAutomaticKeepAlives,
           addRepaintBoundaries: addRepaintBoundaries,
           addSemanticIndexes: addSemanticIndexes,
-        ),
-        super(key: key);
+        );
 
   /// Same as [ListView.builder]
   ResponsiveListView.builder({
-    Key? key,
+    super.key,
     this.scrollDirection,
     this.reverse,
     this.controller,
@@ -74,18 +73,17 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
-  })  : childrenDelegate = SliverChildBuilderDelegate(
+  }) : childrenDelegate = SliverChildBuilderDelegate(
           itemBuilder,
           childCount: itemCount,
           addAutomaticKeepAlives: addAutomaticKeepAlives,
           addRepaintBoundaries: addRepaintBoundaries,
           addSemanticIndexes: addSemanticIndexes,
-        ),
-        super(key: key);
+        );
 
   /// Same as [ListView.separated]
   ResponsiveListView.separated({
-    Key? key,
+    super.key,
     this.scrollDirection,
     this.reverse,
     this.controller,
@@ -103,7 +101,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
-  })  : childrenDelegate = SliverChildBuilderDelegate(
+  }) : childrenDelegate = SliverChildBuilderDelegate(
           (context, index) {
             final int itemIndex = index ~/ 2;
             if (index.isEven) return itemBuilder(context, itemIndex);
@@ -113,12 +111,11 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
           addAutomaticKeepAlives: addAutomaticKeepAlives,
           addRepaintBoundaries: addRepaintBoundaries,
           addSemanticIndexes: addSemanticIndexes,
-        ),
-        super(key: key);
+        );
 
   /// Same as [ListView.custom]
   const ResponsiveListView.custom({
-    Key? key,
+    super.key,
     this.scrollDirection,
     this.reverse,
     this.controller,
@@ -137,7 +134,7 @@ class ResponsiveListView extends StatelessWidget with ResponsiveStatelessWidgetM
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
     bool addSemanticIndexes = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {

@@ -33,7 +33,7 @@ class ResponsiveFlex extends StatelessWidget with ResponsiveStatelessWidgetMixin
   final List<Widget> children;
 
   const ResponsiveFlex({
-    Key? key,
+    super.key,
     required this.direction,
     this.mainAxisAlignment,
     this.mainAxisSize,
@@ -43,7 +43,7 @@ class ResponsiveFlex extends StatelessWidget with ResponsiveStatelessWidgetMixin
     this.textBaseLine,
     this.clipBehavior,
     required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {

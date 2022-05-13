@@ -12,23 +12,21 @@ class ResponsiveConstrainedBox extends StatelessWidget with ResponsiveStatelessW
   final Widget? child;
 
   ResponsiveConstrainedBox({
-    Key? key,
+    super.key,
     BoxConstraints? xs,
     BoxConstraints? sm,
     BoxConstraints? md,
     BoxConstraints? lg,
     BoxConstraints? xl,
     required this.child,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(key: key);
+  }) : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final constraints = data.getForBreakpoint(breakpoint);
-    if (constraints == null) return child ?? const SizedBox.shrink();
 
     return ConstrainedBox(
-      constraints: constraints,
+      constraints: constraints ?? const BoxConstraints(),
       child: child,
     );
   }

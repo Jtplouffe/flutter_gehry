@@ -9,24 +9,22 @@ class ResponsiveFlexible extends StatelessWidget with ResponsiveStatelessWidgetM
   final Widget child;
 
   ResponsiveFlexible({
-    Key? key,
+    super.key,
     ResponsiveFlexibleData? xs,
     ResponsiveFlexibleData? sm,
     ResponsiveFlexibleData? md,
     ResponsiveFlexibleData? lg,
     ResponsiveFlexibleData? xl,
     required this.child,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(key: key);
+  }) : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
     final flexibleData = data.getForBreakpoint(breakpoint);
-    if (flexibleData == null) return child;
 
     return Flexible(
-      flex: flexibleData.flex,
-      fit: flexibleData.fit,
+      flex: flexibleData?.flex ?? 1,
+      fit: flexibleData?.fit ?? FlexFit.loose,
       child: child,
     );
   }
@@ -52,9 +50,5 @@ class ResponsiveFlexibleData {
 }
 
 class ResponsiveExpandedData extends ResponsiveFlexibleData {
-  const ResponsiveExpandedData({int flex = 1})
-      : super(
-          flex: flex,
-          fit: FlexFit.tight,
-        );
+  const ResponsiveExpandedData({super.flex = 1, super.fit = FlexFit.tight});
 }

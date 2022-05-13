@@ -7,16 +7,13 @@ class ResponsiveWidget extends StatelessWidget with ResponsiveStatelessWidgetMix
   final BreakpointsData<Widget> data;
 
   ResponsiveWidget({
-    Key? key,
+    super.key,
     Widget? xs,
     Widget? sm,
     Widget? md,
     Widget? lg,
     Widget? xl,
-  })  : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl),
-        super(
-          key: key,
-        );
+  }) : data = BreakpointsData(xs: xs, sm: sm, md: md, lg: lg, xl: xl);
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {

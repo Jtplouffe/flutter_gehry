@@ -47,7 +47,7 @@ class ResponsiveText extends StatelessWidget with ResponsiveStatelessWidgetMixin
 
   const ResponsiveText(
     this.defaultText, {
-    Key? key,
+    super.key,
     this.text,
     this.style,
     this.strutStyle,
@@ -61,7 +61,7 @@ class ResponsiveText extends StatelessWidget with ResponsiveStatelessWidgetMixin
     this.semanticsLabel,
     this.textWidthBasis,
     this.textHeightBehavior,
-  }) : super(key: key);
+  });
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
