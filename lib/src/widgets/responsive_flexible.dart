@@ -20,11 +20,11 @@ class ResponsiveFlexible extends StatelessWidget with ResponsiveStatelessWidgetM
 
   @override
   Widget buildResponsive(BuildContext context, Breakpoints breakpoint) {
-    final flexibleData = data.getForBreakpoint(breakpoint);
+    final flexibleData = data.getForBreakpoint(breakpoint) ?? const ResponsiveFlexibleData.none();
 
     return Flexible(
-      flex: flexibleData?.flex ?? 1,
-      fit: flexibleData?.fit ?? FlexFit.loose,
+      flex: flexibleData.flex,
+      fit: flexibleData.fit,
       child: child,
     );
   }

@@ -4,6 +4,7 @@ export './responsive_constrained_box.dart';
 export './responsive_decorated_box.dart';
 export './responsive_flex.dart';
 export './responsive_flexible.dart';
+export './responsive_grid_view.dart';
 export './responsive_list_view.dart';
 export './responsive_padding.dart';
 export './responsive_sized_box.dart';

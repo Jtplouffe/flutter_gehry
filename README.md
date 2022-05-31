@@ -14,11 +14,12 @@ breakpoint approach.
     3. [ResponsiveDecoratedBox](#responsivedecoratedbox)
     4. [ResponsiveFlex](#responsiveflex)
     5. [ResponsiveFlexible](#responsiveflexible)
-    6. [ResponsiveListView](#responsivelistview)
-    7. [ResponsivePadding](#responsivepadding)
-    8. [ResponsiveSizedBox](#responsivesizedbox)
-    9. [ResponsiveText](#responsivetext)
-    10. [ResponsiveWidget](#responsivewidget)
+    6. [ResponsiveGridView](#responsivegridview)
+    7. [ResponsiveListView](#responsivelistview)
+    8. [ResponsivePadding](#responsivepadding)
+    9. [ResponsiveSizedBox](#responsivesizedbox)
+    10. [ResponsiveText](#responsivetext)
+    11. [ResponsiveWidget](#responsivewidget)
 
 ## Usage
 
@@ -198,6 +199,12 @@ The `ResponsiveFlexibleData` represents the `Flexible` widget, and `ResponsiveEx
 extends `ResponsiveFlexibleData`, represents the `Expanded` widget.
 
 If there is no data for the current breakpoint, a `SizedBox.shrink()` will be returned.
+
+<br />
+
+### ResponsiveGridView
+
+This widget is a wrapper around the `GridView` widget.
 
 <br />
 
